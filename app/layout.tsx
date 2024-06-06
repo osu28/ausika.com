@@ -32,7 +32,7 @@ export default function RootLayout({
             into elegant, scalable solutions.
           </p>
           <p className="mt-4">
-            I'm currently an engineer at Amazon Web Services (AWS) in Seattle,
+            I am currently an engineer at Amazon Web Services (AWS) in Seattle,
             where I work on serverless computing platforms and microservice
             architectures at Lambda.
           </p>

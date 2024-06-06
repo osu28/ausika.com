@@ -18,8 +18,8 @@ export default async function Home() {
         {posts.map((post) => (
           <div key={post.sys.id} className="post mb-8">
             <h2 className="text-xl font-semibold">{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h2>
-            <p>{post.fields.publishedDate ? new Date(post.fields.publishedDate).toLocaleDateString() : 'No date'}</p>
-            <a href={`/posts/${post.fields.slug}`} className="text-blue-500 hover:underline">{post.fields.slug}</a>
+            <p>{post.fields.publishedDate ? new Date(post.fields.publishedDate as string).toLocaleDateString() : 'No date'}</p>
+            <a href={`/posts/${post.fields.slug}`} className="text-blue-500 hover:underline">{post.fields.slug as string}</a>
             {isDocument(post.fields.content)
               ? documentToReactComponents(post.fields.content)
               : <p>No content available.</p>
