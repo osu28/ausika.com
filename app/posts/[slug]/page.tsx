@@ -21,12 +21,17 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = entries.items[0] as Entry<any>;
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h1>
-      {isDocument(post.fields.content)
-        ? documentToReactComponents(post.fields.content)
-        : <p>No content available.</p>
-      }
+    <div className="flex flex-col h-screen">
+      <h1 className="text-4xl font-bold mb-8">{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h1>
+      <p>{post.fields.publishedDate ? new Date(post.fields.publishedDate).toLocaleDateString() : 'No date'}</p>
+      <div className="flex-grow overflow-y-auto">
+        <div key={post.sys.id} className="post">
+          {isDocument(post.fields.content)
+            ? documentToReactComponents(post.fields.content)
+            : <p>No content available.</p>
+          }
+        </div>
+      </div>
     </div>
   );
 }

@@ -12,17 +12,21 @@ export default async function Home() {
   const posts = entries.items as Entry<any>[];
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">My Blog</h1>
-      {posts.map((post) => (
-        <div key={post.sys.id} className="mb-8">
-          <h2 className="text-xl font-semibold">{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h2>
-          {isDocument(post.fields.content)
-            ? documentToReactComponents(post.fields.content)
-            : <p>No content available.</p>
-          }
-        </div>
-      ))}
+    <div className="flex flex-col h-full">
+      <h1 className="text-4xl font-bold mb-8">Oscar Su</h1>
+      <div className="flex-grow overflow-y-auto">
+        {posts.map((post) => (
+          <div key={post.sys.id} className="post mb-8">
+            <h2 className="text-xl font-semibold">{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h2>
+            <p>{post.fields.publishedDate ? new Date(post.fields.publishedDate).toLocaleDateString() : 'No date'}</p>
+            <a href={`/posts/${post.fields.slug}`} className="text-blue-500 hover:underline">{post.fields.slug}</a>
+            {isDocument(post.fields.content)
+              ? documentToReactComponents(post.fields.content)
+              : <p>No content available.</p>
+            }
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
