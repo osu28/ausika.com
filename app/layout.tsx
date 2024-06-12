@@ -51,7 +51,7 @@ export default function RootLayout({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @oscarsu28 on Linkedin
+                @Linkedin
               </a>
             </li>
             <li>
@@ -61,7 +61,17 @@ export default function RootLayout({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @osu28 on GitHub
+                @GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/oscarsu__/"
+                className="text-blue-500 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @Instagram
               </a>
             </li>
           </ul>
