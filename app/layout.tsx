@@ -21,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={`${inter.className} flex h-screen overflow-hidden`}>
-        <div className="w-2/3 p-8 overflow-y-auto">
+        <div className="w-full md:w-2/3 p-8 overflow-hidden">
           {children}
         </div>
-        <div className="w-1/3 p-8 bg-gray-100 overflow-y-auto">
+        <div className="w-1/3 p-8 bg-gray-100 overflow-y-auto hidden md:block">
           <h2 className="text-2xl font-bold mb-4">About Me</h2>
           <p>
             My name is Oscar Su. My life has revolved around learning, innovating,
