@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head />
+      <Head>
+        <link rel="icon" href="/ausika_logo.ico" type="image/x-icon" />
+        <title>Oscar Su</title>
+      </Head>
       <body className={`${inter.className} flex h-screen overflow-hidden`}>
         <div className="w-full md:w-2/3 p-8 overflow-hidden">
           {children}
@@ -39,6 +43,11 @@ export default function RootLayout({
           <p className="mt-4">All opinions are my own.</p>
           <h3 className="text-xl font-bold mt-8">Links</h3>
           <ul className="mt-2">
+            <li>
+                <a href="/books" className="text-blue-500 hover:underline">
+                  My Book List
+                </a>
+            </li>
             <li>
               <a href="/projects" className="text-blue-500 hover:underline">
                 My Projects

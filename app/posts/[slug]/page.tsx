@@ -16,6 +16,16 @@ const customRenderer = {
   [BLOCKS.LIST_ITEM]: (node: Block | Inline, children: React.ReactNode) => <li className="mb-2">{children}</li>,
 };
 
+export async function generateStaticParams() {
+  const entries = await client.getEntries<any>({
+    content_type: 'blogPost',
+  });
+
+  return entries.items.map((post: Entry<any>) => ({
+    slug: post.fields.slug as string,
+  }));
+}
+
 export default async function Post({ params }: { params: { slug: string } }) {
   const entries = await client.getEntries<any>({
     content_type: 'blogPost',
