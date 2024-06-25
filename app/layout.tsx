@@ -25,7 +25,7 @@ export default function RootLayout({
         <title>Oscar Su</title>
       </Head>
       <body className={`${inter.className} flex h-screen overflow-hidden`}>
-        <div className="w-full md:w-2/3 p-8 overflow-hidden">
+        <div className="overflow-y-auto w-full md:w-2/3 p-8 overflow-hidden">
           {children}
         </div>
         <div className="w-1/3 p-8 bg-gray-100 overflow-y-auto hidden md:block">

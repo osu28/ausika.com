@@ -28,7 +28,7 @@ export default async function Home() {
       <div>
         <h1 className="text-4xl font-bold mb-3">Oscar Su</h1>
       </div>
-      <div className="overflow-y-auto flex-grow mt-1">
+      <div className="flex-grow mt-1">
         {posts.map((post) => (
           <div key={post.sys.id} className="post mb-1">
             <h2 className="text-2xl font-bold mb-1">

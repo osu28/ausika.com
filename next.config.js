@@ -6,7 +6,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: false,
-  // Add this:
   async headers() {
     return [
       {
