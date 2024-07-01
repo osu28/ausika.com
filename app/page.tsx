@@ -31,14 +31,11 @@ export default async function Home() {
       <div className="flex-grow mt-1">
         {posts.map((post) => (
           <div key={post.sys.id} className="post mb-1">
-            <h2 className="text-2xl font-bold mb-1">
+            <h2 className="text-xl font-bold mb-1">
               <a href={`/posts/${post.fields.slug}`}>{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</a>
             </h2>
-            <p className="text-gray-500 mb-2">{post.fields.publishedDate ? new Date(post.fields.publishedDate as string).toLocaleDateString() : 'No date'}</p>
-            {isDocument(post.fields.content)
-              ? documentToReactComponents(post.fields.content, { renderNode: customRenderer })
-              : <p>No content available.</p>
-            }
+            <p className="text-gray-500 mt-2">{post.fields.publishedDate ? new Date(post.fields.publishedDate as string).toLocaleDateString() : 'No date'}</p>
+
           </div>
         ))}
       </div>
