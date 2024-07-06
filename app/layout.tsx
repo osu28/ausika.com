@@ -29,7 +29,7 @@ export default function RootLayout({
           {children}
         </div>
         <div className="w-1/3 p-8 bg-gray-100 overflow-y-auto hidden md:block">
-          <h2 className="text-2xl font-bold mb-4">About Me</h2>
+          <h2>About Me</h2>
           <p>
             My name is Oscar Su. My life has revolved around learning, innovating,
             and building. I find immense satisfaction in turning complex problems
@@ -41,7 +41,7 @@ export default function RootLayout({
             architectures at Lambda.
           </p>
           <p className="mt-4">All opinions are my own.</p>
-          <h3 className="text-xl font-bold mt-8">Links</h3>
+          <h3>Links</h3>
           <ul className="mt-2">
             <li>
                 <a href="/books" className="text-blue-500 hover:underline">

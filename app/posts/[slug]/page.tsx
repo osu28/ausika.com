@@ -42,7 +42,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <div className="flex flex-col h-screen overflow-y-auto">
       <article className="flex-grow">
         <header className="mb-2">
-          <h1 className="text-3xl font-bold mb-3">{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h1>
+          <h1>{post.fields.title ? post.fields.title.toString() : 'Untitled Post'}</h1>
           <p className="text-gray-600">{post.fields.publishedDate ? new Date(post.fields.publishedDate as string).toLocaleDateString() : 'No date'} | Oscar Su</p>
         </header>
         <div key={post.sys.id} className="post">
